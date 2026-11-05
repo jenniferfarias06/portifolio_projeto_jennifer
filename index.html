@@ -1,0 +1,694 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Jennifer farias // Data Science  &amp; BI</title>
+<!-- Tailwind CSS CDN v3 com plugins necessários -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Configurações do Tailwind -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#070b14',
+              surface: '#0d1322',
+              card: '#11182c',
+              border: '#1e293b',
+              accent: '#38bdf8',
+              cyanGlow: '#0284c7'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px -4px rgba(56, 189, 248, 0.45)',
+            'glow-subtle': '0 0 40px -10px rgba(56, 189, 248, 0.15)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<!-- Estilos customizados mínimos para refinamento de layout -->
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #070b14;
+      color: #e2e8f0;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-200 antialiased selection:bg-brand-accent selection:text-slate-900 bg-grid-pattern min-h-screen">
+<!-- BEGIN: MainNavbar -->
+<!-- Barra de navegação desktop fixa no topo com blur e layout idêntico à referência -->
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-brand-dark/85 border-b border-brand-border/60">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Marca / Logo do Analista -->
+<a class="flex items-center gap-2 group" data-purpose="site-brand" href="#hero"><span class="w-2.5 h-2.5 rounded-full bg-brand-accent shadow-[0_0_10px_#38bdf8] group-hover:scale-125 transition-transform duration-300"></span>
+<span class="text-xl font-bold tracking-tight text-white group-hover:text-brand-accent transition-colors">
+          JF <span class="text-slate-500 font-light">//</span> <span class="text-brand-accent">Analytics</span>
+</span></a>
+<!-- Menu de Links Centrais -->
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium" data-purpose="navigation-menu"><a class="text-white relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-accent" href="#hero">Início</a><a class="text-slate-400 hover:text-white transition-colors duration-200" href="#sobre-mim">Sobre</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-200" href="#curriculo">Currículo</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-200" href="#ferramentas">Ferramentas</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-200" href="#projetos">Projetos</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-200" href="#stack">Stack Técnica</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-200" href="#contato">Contato</a></nav>
+<!-- Botão de Ação Destacado (Let's Talk) -->
+<div class="flex items-center">
+<a class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-brand-accent shadow-glow-cyan hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" data-purpose="nav-cta-button" href="#contato">
+          Fale Comigo <span class="text-xs">↗</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainNavbar -->
+<main>
+<!-- BEGIN: HeroSection -->
+<!-- Seção principal espelhando o visual, centralização e badges da imagem fornecida -->
+<section class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden" data-purpose="hero-section" id="hero">
+<!-- Glow atmosférico de fundo -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-brand-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-4xl mx-auto px-6 flex flex-col items-center text-center relative z-10">
+<!-- Avatar Circular com Halo Glow -->
+<div class="relative mb-6" data-purpose="user-avatar-container">
+<div class="w-28 h-28 md:w-32 md:h-32 rounded-full p-1 ring-2 ring-brand-accent/80 ring-offset-4 ring-offset-brand-dark shadow-glow-cyan bg-brand-surface overflow-hidden">
+<img alt="Jennifer Farias - Analista de Dados e BI" class="w-full h-full object-cover object-top scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3I4nzwvwTe0Ci-7AtmtQIC5aP9jUe2ZHON46mg4q9QlWdHQR61XE0EplnBVpVQnv47YHW7XMINp5_jqPy5NX2DDA9B62c7DYlu5XxHhyFqlQK3drtncksBuhA9kErb_WYh9mzpRJNsSMEfEdWPAWgLam72TqLprqUq1hgrQm5O1Px6m3n-qs-Kvm9Aid9Uh1NskPEEdSfGvbGAPXiNmLXLXfjhw6EadJ-6RE7jjW8GxTZcdEr3Nd_8GeJ8aKGjTCv">
+</div>
+</div>
+<!-- Pílula de Disponibilidade / Status -->
+
+<!-- Título de Impacto com tipografia Bold -->
+<h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.18] max-w-3xl mb-6" data-purpose="main-heading">Olá, eu sou Jennifer Farias.</h1><p class="text-sm md:text-base text-slate-400 max-w-xl mx-auto mb-8 font-normal leading-relaxed">Seja muito bem-vindo(a) ao meu Portifolio com Projetos de dados&nbsp; para diferentes setores desenvolvidos com&nbsp; ferramentas e tecnologias modernas.<div><br></div><div class="">Aqui você encontra meus projetos de dados que mostram minha experiância e dominio em construir soluções de mercado para diversas áreas e setores, sempre com objetivo de gerar valor.</div></p>
+<!-- Descrição / Subtítulo Profissional -->
+
+<!-- Ações do Hero (Botão Primário Glow + Secundário Dark Outline) -->
+<div class="flex flex-col sm:flex-row items-center gap-4 mb-12" data-purpose="hero-actions">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-accent text-slate-950 font-bold text-sm shadow-glow-cyan hover:bg-sky-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" href="#projetos">
+            Ver Projetos
+          </a>
+<a class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-slate-900/90 text-slate-200 border border-brand-border hover:border-slate-600 hover:text-white text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2" href="#contato">
+            Entrar em Contato <span class="">→</span>
+</a>
+</div>
+<!-- Ícones Sociais Minimalistas -->
+<div class="flex items-center gap-4" data-purpose="social-links-bar">
+<a aria-label="GitHub Profile" class="w-10 h-10 rounded-full bg-slate-900/90 border border-brand-border/70 flex items-center justify-center text-slate-400 hover:text-brand-accent hover:border-brand-accent/50 transition-all duration-200" href="https://github.com/jenniferfarias06" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+</a>
+<a aria-label="LinkedIn Profile" class="w-10 h-10 rounded-full bg-slate-900/90 border border-brand-border/70 flex items-center justify-center text-slate-400 hover:text-brand-accent hover:border-brand-accent/50 transition-all duration-200" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+
+<a aria-label="Enviar Email" class="w-10 h-10 rounded-full bg-slate-900/90 border border-brand-border/70 flex items-center justify-center text-slate-400 hover:text-brand-accent hover:border-brand-accent/50 transition-all duration-200" href="mailto:fariasjennifer407x@gmail.com">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</section><section class="py-24 max-w-4xl mx-auto px-6 relative" data-purpose="about-me-section" id="sobre-mim">
+  <div class="mb-12 text-center">
+    <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight flex items-center justify-center gap-3">
+      <span class="h-[2px] w-8 bg-brand-accent/40 hidden sm:inline-block"></span>
+      Sobre Mim
+      <span class="h-[2px] w-8 bg-brand-accent/40 hidden sm:inline-block"></span>
+    </h2>
+    
+  </div>
+
+  <div class="mb-14"><div class="text-lg md:text-xl text-slate-200 leading-relaxed text-center font-normal space-y-6 max-w-3xl mx-auto"><p class="">Sou estudante de Ciência da Computação, com foco em Ciência de Dados. Utilizo Python, SQL e Pandas para tratar, organizar e explorar conjuntos de dados, construindo indicadores que respondem a perguntas de negócio.</p><p class="">Minha experiência prática envolve análises exploratórias e desenvolvimento de dashboards interativos com Streamlit e Plotly, utilizando métricas, filtros e visualizações para investigar padrões, tendências e relações entre variáveis.</p><p class="text-brand-accent font-medium text-lg md:text-xl pt-2">Stack: Python | SQL | Pandas | NumPy | Streamlit | Plotly | Matplotlib | Folium | Git | GitHub</p></div></div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    
+    
+    
+    
+  </div>
+</section><section class="py-24 max-w-7xl mx-auto px-6 relative" data-purpose="resume-section" id="curriculo">
+<!-- Section Header -->
+<div class="mb-16 text-center">
+<h2 class="text-3xl md:text-5xl font-bold text-white mt-3 flex items-center justify-center gap-3">
+<span class="h-[2px] w-8 bg-brand-accent/40 hidden sm:inline-block"></span>
+      Currículo
+      <span class="h-[2px] w-8 bg-brand-accent/40 hidden sm:inline-block"></span>
+</h2>
+<p class="text-slate-400 mt-3 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+      Trajetória analítica voltada a soluções de dados de alto impacto, engenharia analítica, pipelines escaláveis e sólida governança de métricas.
+    </p>
+</div>
+<!-- 2-Column Layout based on Resume reference -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Coluna Esquerda: Resumo, Contato e Skills (4 colunas) -->
+<div class="lg:col-span-5 bg-brand-card rounded-2xl border border-brand-border/80 p-6 md:p-8 shadow-lg flex flex-col text-slate-200">
+<!-- Framed Portrait Photo -->
+<div class="flex justify-center mb-6">
+<div class="w-full max-w-[220px] rounded-xl overflow-hidden border border-slate-700/60 shadow-md bg-slate-900/80">
+<img alt="Jennifer Farias" class="w-full h-auto object-cover aspect-[4/5] block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9LWyYVFR3rRUlauI7OsTwqoZLXl9NdkYjDWMR2nC_vMMr93r5L9bJnqcfRM1MsmTIP-rGNYFo6yikCpIZbN1oio6ionX5LXrZTuVAzgZe1-SmeHoZ9NQboVXpapkmofvIs2jV-z3JCL-WygBXEH86OHjksxiHOFrk-ytVES8zx7Ii52l2_r_9iZs7Aw6It4lam1EiJOs3PZVSxRZcDpPr5zc15BJE4FBL7emFwR0A5LmeiMsuUOHeo8EEc_Q13Ffp">
+</div>
+</div>
+<!-- Resumo Profissional / Professional Summary -->
+<div class="mb-6">
+<h3 class="text-lg md:text-xl font-bold text-white mb-2.5 tracking-tight">Resumo Profissional</h3>
+<p class="text-xs md:text-sm text-slate-300 leading-relaxed">Estudante de Ciência de Dados e graduanda em Ciência da Computação. Estou construindo minha base em análise e visualização de dados por meio de projetos práticos, com foco em transformar informações em descobertas claras e úteis.</p>
+</div>
+<!-- Informações de Contato / Contact Information -->
+<div class="mb-8">
+<h3 class="text-lg md:text-xl font-bold text-white mb-3.5 tracking-tight">Informações de Contato</h3>
+<ul class="space-y-2.5 text-xs md:text-sm text-slate-300">
+<li class="flex items-center gap-3">
+<svg class="w-4 h-4 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">São Paulo, SP — Brasil</span>
+</li>
+<li class="flex items-center gap-3">
+<svg class="w-4 h-4 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<a class="hover:text-brand-accent transition-colors truncate" href="mailto:fariasjennifer407x@gmail.com">fariasjennifer407x@gmail.com</a>
+</li>
+<li class="flex items-center gap-3"><svg class="w-4 h-4 text-brand-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><a class="hover:text-brand-accent transition-colors truncate" href="https://wa.me/5592994635551" target="_blank" rel="noopener noreferrer">+55 (92) 99463-5551</a></li>
+<li class="flex items-center gap-3"><svg class="w-4 h-4 text-brand-accent fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+<a class="hover:text-brand-accent transition-colors truncate" href="https://linkedin.com/in/jennifer-farias-49802233a" rel="noopener noreferrer" target="_blank">linkedin.com/in/jennifer-farias-49802233a</a></li>
+</ul>
+</div>
+<!-- Competências Técnicas / Technical Skills with Progress Bars -->
+<div class="pt-5 border-t border-brand-border/50">
+</div>
+</div>
+<!-- Coluna Direita: Experiência Profissional e Formação Acadêmica (8 colunas) -->
+<div class="flex flex-col gap-10 lg:col-span-7">
+<!-- Seção: Experiência Profissional -->
+
+<!-- Seção: Formação Acadêmica -->
+<div>
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-brand-border/60">
+<span class="text-xl text-brand-accent">🎓</span>
+<h3 class="text-xl md:text-2xl font-bold text-white">Formação Acadêmica</h3>
+</div>
+<div class="space-y-6 pl-2"><!-- Educação 1: Ciência da Computação -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2.5 before:h-2.5 before:rounded-full before:bg-brand-accent before:shadow-[0_0_8px_#38bdf8] after:content-[''] after:absolute after:left-[4px] after:top-5 after:bottom-[-20px] after:w-[2px] after:bg-brand-border">
+  <div class="flex flex-wrap items-baseline justify-between gap-2">
+    <h4 class="text-lg font-bold text-white">Ciência da Computação</h4>
+    <span class="px-3 py-1 rounded text-xs md:text-sm font-mono-code bg-brand-accent/10 text-brand-accent border border-brand-accent/30 font-semibold">4º período – Em andamento</span>
+  </div>
+  <div class="text-sm font-medium text-slate-400 mt-1.5 flex items-center gap-1.5">
+    <span class="">🏛</span> Estácio
+  </div>
+  <p class="mt-2.5 text-sm md:text-base text-slate-300 leading-relaxed">
+    Graduação com foco em programação, fundamentos computacionais e desenvolvimento de competências aplicadas à Ciência de Dados.
+  </p>
+  <p class="mt-2.5 text-xs md:text-sm font-medium text-brand-accent">
+    Conhecimentos relevantes: Python | SQL | Lógica de Programação
+  </p>
+</div>
+
+<!-- Educação 2: Formação em Ciência de Dados -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2.5 before:h-2.5 before:rounded-full before:bg-sky-400">
+  <div class="flex flex-wrap items-baseline justify-between gap-2">
+    <h4 class="text-lg font-bold text-white">Formação em Ciência de Dados</h4>
+    <span class="px-3 py-1 rounded text-xs md:text-sm font-mono-code bg-slate-800 text-slate-300 border border-slate-700 font-semibold">Em andamento</span>
+  </div>
+  <div class="text-sm font-medium text-slate-400 mt-1.5 flex items-center gap-1.5">
+    <span class="">🏛</span> Comunidade DS
+  </div>
+  <p class="mt-2.5 text-sm md:text-base text-slate-300 leading-relaxed">
+    Formação prática voltada à resolução de problemas de negócio por meio de dados, abrangendo desde o tratamento e a exploração de bases até a construção de dashboards para apresentação de resultados.
+  </p>
+  <ul class="mt-3.5 space-y-2 text-sm md:text-base text-slate-300 leading-relaxed">
+    <li class="flex items-start gap-2.5">
+      <span class="text-brand-accent mt-0.5 text-base">•</span>
+      <span class="">Desenvolvi análises descritivas e exploratórias para responder perguntas de negócio e identificar padrões nos dados.</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="text-brand-accent mt-0.5 text-base">•</span>
+      <span class="">Utilizei SQL para consultas, filtragem e manipulação de dados.</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="text-brand-accent mt-0.5 text-base">•</span>
+      <span class="">Apliquei Python e Pandas na limpeza, transformação, agrupamento e análise de conjuntos de dados.</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="text-brand-accent mt-0.5 text-base">•</span>
+      <span class="">Construí dashboards interativos com Streamlit, Plotly e Folium, utilizando indicadores, gráficos, mapas e filtros para apresentar resultados.</span>
+    </li>
+  </ul>
+  <p class="mt-3 text-xs md:text-sm font-medium text-brand-accent">
+    Ferramentas: Python | SQL | Pandas | NumPy | Streamlit | Plotly | Folium | Git | GitHub
+  </p>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ToolsAndTechnologiesSection -->
+<!-- Seção baseada no padrão de serviços com 6 cards em grid 3x2 e ícones ciano -->
+<section class="py-24 max-w-7xl mx-auto px-6 relative" data-purpose="tools-and-technologies" id="ferramentas">
+<!-- Section Header -->
+<div class="mb-16 text-center">
+<h2 class="text-3xl md:text-5xl font-bold text-white mt-3 flex items-center justify-center gap-3">
+<span class="h-[2px] w-8 bg-brand-accent/40 hidden sm:inline-block"></span>
+      Ferramentas &amp; Tecnologias
+      <span class="h-[2px] w-8 bg-brand-accent/40 hidden sm:inline-block"></span>
+</h2>
+<p class="text-slate-400 mt-3 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+      Soluções analíticas e ecossistema técnico aplicado para gerar eficiência, governança e impacto nos negócios.
+    </p>
+</div>
+<!-- 3-Column Grid (3x2) com 6 cards refinados -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Card 1: Programação & SQL -->
+<article class="bg-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col justify-between shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 group">
+  <div>
+    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+      <!-- Code / Programming icon (</>) -->
+      <svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-3">
+      Programação &amp; SQL
+    </h3>
+    <p class="text-slate-400 text-sm leading-relaxed">
+      Python e SQL para consultas, manipulação, transformação e organização de dados.
+    </p>
+  </div>
+</article>
+
+<!-- Card 2: Tratamento de Dados -->
+<article class="bg-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col justify-between shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 group">
+  <div>
+    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+      <!-- Database icon -->
+      <svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-3">
+      Tratamento de Dados
+    </h3>
+    <p class="text-slate-400 text-sm leading-relaxed">
+      Pandas e NumPy para limpeza, tratamento, agrupamento e preparação de bases.
+    </p>
+  </div>
+</article>
+
+<!-- Card 3: Análise Exploratória -->
+<article class="bg-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col justify-between shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 group">
+  <div>
+    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+      <!-- Trend / Analytics line chart icon -->
+      <svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+        <polyline points="17 6 23 6 23 12"></polyline>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-3">
+      Análise Exploratória
+    </h3>
+    <p class="text-slate-400 text-sm leading-relaxed">
+      Análises descritivas, comparações e investigação de padrões e tendências.
+    </p>
+  </div>
+</article>
+
+<!-- Card 4: Visualização de Dados -->
+<article class="bg-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col justify-between shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 group">
+  <div>
+    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+      <!-- Bar chart / Visualization icon -->
+      <svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+        <line x1="18" y1="20" x2="18" y2="10"></line>
+        <line x1="12" y1="20" x2="12" y2="4"></line>
+        <line x1="6" y1="20" x2="6" y2="14"></line>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-3">
+      Visualização de Dados
+    </h3>
+    <p class="text-slate-400 text-sm leading-relaxed">
+      Plotly e Matplotlib para criação de gráficos e apresentação de indicadores.
+    </p>
+  </div>
+</article>
+
+<!-- Card 5: Dashboards Interativos -->
+<article class="bg-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col justify-between shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 group">
+  <div>
+    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+      <!-- Dashboard / App grid layout icon -->
+      <svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-3">
+      Dashboards Interativos
+    </h3>
+    <p class="text-slate-400 text-sm leading-relaxed">
+      Streamlit para desenvolvimento de painéis com métricas, filtros e visualizações.
+    </p>
+  </div>
+</article>
+
+<!-- Card 6: Análise Geográfica -->
+<article class="bg-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col justify-between shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 group">
+  <div>
+    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+      <!-- Map / Geographical folded map icon -->
+      <svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+        <line x1="8" y1="2" x2="8" y2="18"></line>
+        <line x1="16" y1="6" x2="16" y2="22"></line>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-3">
+      Análise Geográfica
+    </h3>
+    <p class="text-slate-400 text-sm leading-relaxed">
+      Folium para criação de mapas interativos e visualização de dados geográficos.
+    </p>
+  </div>
+</article></div>
+</section>
+<!-- END: ToolsAndTechnologiesSection -->
+<!-- BEGIN: MetricsSection -->
+<!-- Seção de KPIs de Alto Impacto para gerar credibilidade técnica imediata -->
+<!-- END: MetricsSection -->
+<!-- BEGIN: ProjectsSection -->
+<!-- Portfólio de Estudos de Caso com foco analítico, modelagem e BI -->
+<section class="py-20 max-w-7xl mx-auto px-6 relative" data-purpose="about-section" id="sobre">
+</section><section class="py-20 bg-brand-surface/40 border-t border-brand-border/40" data-purpose="technical-stack" id="stack">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-14">
+<span class="text-xs uppercase tracking-widest font-semibold text-brand-accent px-3 py-1 rounded-full bg-brand-accent/10 border border-brand-accent/20">Competências</span>
+<h2 class="text-3xl md:text-4xl font-bold text-white mt-3">Stack Tecnológica &amp; Domínio</h2>
+<p class="text-slate-400 mt-2 text-sm max-w-xl mx-auto">Tecnologias e competências aplicadas à preparação, exploração, análise e visualização de dados.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Bloco 1 -->
+<div class="p-6 rounded-2xl bg-brand-card/70 border border-brand-border/60">
+<div class="text-xs font-semibold text-brand-accent mb-2">01</div>
+<h3 class="text-base font-bold text-white mb-4">
+Programação &amp; Manipulação
+</h3>
+<ul class="space-y-2 text-sm text-slate-300">
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Python (Pandas, NumPy)</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> SQL (consultas e agregações)</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Limpeza e transformação de dados</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> JupyterLab</li>
+</ul>
+</div>
+<!-- Bloco 2 -->
+<div class="p-6 rounded-2xl bg-brand-card/70 border border-brand-border/60">
+<div class="text-xs font-semibold text-brand-accent mb-2">02</div>
+<h3 class="text-base font-bold text-white mb-4">
+Visualização &amp; Dashboards
+</h3>
+<ul class="space-y-2 text-sm text-slate-300">
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Streamlit</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Plotly Express</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Matplotlib</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Folium (mapas interativos)</li>
+</ul>
+</div>
+<!-- Bloco 3 -->
+<div class="p-6 rounded-2xl bg-brand-card/70 border border-brand-border/60">
+<div class="text-xs font-semibold text-brand-accent mb-2">03</div>
+<h3 class="text-base font-bold text-white mb-4">
+Análise de Dados
+</h3>
+<ul class="space-y-2 text-sm text-slate-300">
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Análise exploratória (EDA)</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Análise descritiva</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Indicadores de desempenho (KPIs)</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Agrupamentos e análises comparativas</li>
+</ul>
+</div>
+<!-- Bloco 4 -->
+<div class="p-6 rounded-2xl bg-brand-card/70 border border-brand-border/60">
+<div class="text-xs font-semibold text-brand-accent mb-2">04</div>
+<h3 class="text-base font-bold text-white mb-4">
+Ferramentas &amp; Publicação
+</h3>
+<ul class="space-y-2 text-sm text-slate-300">
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> GitHub (repositórios)</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Streamlit Community Cloud</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> JupyterLab Desktop</li>
+<li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Organização de projetos Python</li>
+</ul>
+</div></div>
+</div>
+</section><section class="py-24 max-w-7xl mx-auto px-6 relative" data-purpose="featured-projects" id="projetos">
+  <!-- Cabeçalho de Seção Centralizado no estilo da Referência -->
+  <div class="mb-10 text-center max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">Projetos em Destaque</h2>
+    <p class="text-slate-400 text-sm md:text-base leading-relaxed">Casos de estudo aplicados em inteligência de dados, engenharia analítica, machine learning e otimização de negócios orientados a ROI.</p>
+  </div>
+
+  <!-- Filtros Centrais em Pílula (Pill Filter Bar) -->
+  <div class="flex flex-wrap items-center justify-center gap-2.5 mb-14" data-purpose="portfolio-filters">
+    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-semibold bg-brand-accent text-slate-950 shadow-glow-cyan transition-all duration-200">Todos</button>
+    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Estratégia &amp; BI</button>
+    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Finanças &amp; SaaS</button>
+    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Engenharia de Dados</button>
+    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Machine Learning</button>
+  </div>
+
+  <!-- Grid 3x2 de Cards Conforme Imagem de Referência -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    <!-- Card 1: Business Growth Strategy -->
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+      <div class="h-48 bg-gradient-to-br from-slate-900 to-sky-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
+        <div class="flex justify-between items-center z-10">
+          <span class="text-[10px] font-mono-code bg-brand-accent/10 text-brand-accent px-2.5 py-0.5 rounded border border-brand-accent/30 font-semibold">ROI +34%</span>
+          <span class="text-xs text-emerald-400 font-semibold">Taxa de Retenção: 96%</span>
+        </div>
+        <div class="flex items-end justify-between h-20 pt-4 px-2 z-10">
+          <div class="w-3 bg-slate-700 h-[35%] rounded-t"></div>
+          <div class="w-3 bg-slate-700 h-[50%] rounded-t"></div>
+          <div class="w-3 bg-slate-700 h-[45%] rounded-t"></div>
+          <div class="w-3 bg-sky-500/60 h-[70%] rounded-t"></div>
+          <div class="w-3 bg-brand-accent h-[95%] rounded-t shadow-[0_0_8px_#38bdf8]"></div>
+          <div class="w-3 bg-slate-700 h-[65%] rounded-t"></div>
+          <div class="w-3 bg-slate-700 h-[55%] rounded-t"></div>
+        </div>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Estratégia de Crescimento &amp; Churn</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Planejamento Estratégico &amp; IA</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Estratégia</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Scikit-Learn</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2: Financial Restructuring -->
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+      <div class="h-48 bg-gradient-to-br from-slate-900 to-indigo-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
+        <div class="flex justify-between items-center z-10">
+          <span class="text-[10px] font-mono-code bg-indigo-500/20 text-indigo-300 px-2.5 py-0.5 rounded border border-indigo-400/30 font-semibold">Auditoria Executiva</span>
+          <span class="text-xs text-brand-accent font-semibold">Tempo Real</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2 pt-2 z-10">
+          <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+            <div class="text-[10px] text-slate-400">ARR</div>
+            <div class="text-sm font-bold text-white">R$ 4.8M</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+            <div class="text-[10px] text-slate-400">CAC</div>
+            <div class="text-sm font-bold text-emerald-400">R$ 380</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+            <div class="text-[10px] text-slate-400">LTV/CAC</div>
+            <div class="text-sm font-bold text-brand-accent">5.8x</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Cockpit Financeiro Executivo</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Consultoria &amp; Modelagem Financeira</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Finanças</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Power BI &amp; DAX</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3: Supply Chain Optimization -->
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+      <div class="h-48 bg-gradient-to-br from-slate-900 to-sky-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
+        <div class="flex justify-between items-center z-10">
+          <span class="text-[10px] font-mono-code bg-sky-500/20 text-brand-accent px-2.5 py-0.5 rounded border border-sky-400/30 font-semibold">Supply Analytics</span>
+          <span class="text-xs text-emerald-400 font-semibold">-28% Ruptura</span>
+        </div>
+        <div class="flex items-center justify-center gap-3 text-xs font-mono-code py-4 z-10">
+          <span class="px-2.5 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-300 text-[11px]">Fornecedor</span>
+          <span class="text-brand-accent font-bold">→</span>
+          <span class="px-2.5 py-1.5 bg-sky-950 border border-brand-accent/50 rounded-lg text-brand-accent text-[11px]">Forecast IA</span>
+          <span class="text-brand-accent font-bold">→</span>
+          <span class="px-2.5 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-300 text-[11px]">Distribuição</span>
+        </div>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Otimização de Supply Chain &amp; Estoque</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Gestão Operacional &amp; Logística</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Operações</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Logística</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4: Digital Transformation -->
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+      <div class="h-48 bg-gradient-to-br from-slate-900 to-cyan-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
+        <div class="flex justify-between items-center z-10">
+          <span class="text-[10px] font-mono-code bg-emerald-500/20 text-emerald-400 px-2.5 py-0.5 rounded border border-emerald-400/30 font-semibold">Modern Data Stack</span>
+          <span class="text-xs text-brand-accent font-semibold">-60% Custo Cloud</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-xs font-mono-code py-4 z-10">
+          <span class="px-2.5 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-400 text-[11px]">stg_raw</span>
+          <span class="text-brand-accent">→</span>
+          <span class="px-2.5 py-1.5 bg-sky-950 border border-brand-accent/60 rounded-lg text-brand-accent font-bold text-[11px]">fct_revenue</span>
+          <span class="text-brand-accent">→</span>
+          <span class="px-2.5 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-400 text-[11px]">mart_analytics</span>
+        </div>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Transformação Digital &amp; Lakehouse</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Consultoria Tecnológica &amp; dbt</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Snowflake</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">dbt Core</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 5: Market Expansion -->
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+      <div class="h-48 bg-gradient-to-br from-slate-900 to-sky-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
+        <div class="flex justify-between items-center z-10">
+          <span class="text-[10px] font-mono-code bg-sky-500/20 text-brand-accent px-2.5 py-0.5 rounded border border-sky-400/30 font-semibold">Cohort Analysis</span>
+          <span class="text-xs text-emerald-400 font-semibold">+42% Expansão</span>
+        </div>
+        <div class="flex items-end justify-between h-20 pt-4 px-2 z-10">
+          <div class="w-3 bg-slate-700 h-[25%] rounded-t"></div>
+          <div class="w-3 bg-slate-700 h-[40%] rounded-t"></div>
+          <div class="w-3 bg-sky-500/60 h-[60%] rounded-t"></div>
+          <div class="w-3 bg-brand-accent h-[75%] rounded-t shadow-[0_0_8px_#38bdf8]"></div>
+          <div class="w-3 bg-brand-accent h-[90%] rounded-t shadow-[0_0_8px_#38bdf8]"></div>
+          <div class="w-3 bg-slate-700 h-[70%] rounded-t"></div>
+          <div class="w-3 bg-slate-700 h-[50%] rounded-t"></div>
+        </div>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Expansão de Mercado &amp; Cohorts</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Planejamento Estratégico &amp; Growth</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Estratégia</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Growth Metrics</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 6: Investment Strategy -->
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+      <div class="h-48 bg-gradient-to-br from-slate-900 to-indigo-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
+        <div class="flex justify-between items-center z-10">
+          <span class="text-[10px] font-mono-code bg-indigo-500/20 text-indigo-300 px-2.5 py-0.5 rounded border border-indigo-400/30 font-semibold">Alocação de Portfólio</span>
+          <span class="text-xs text-brand-accent font-semibold">Sharpe: 2.14</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2 pt-2 z-10">
+          <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+            <div class="text-[10px] text-slate-400">AUM</div>
+            <div class="text-sm font-bold text-white">R$ 18.5M</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+            <div class="text-[10px] text-slate-400">Volatilidade</div>
+            <div class="text-sm font-bold text-emerald-400">8.2%</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
+            <div class="text-[10px] text-slate-400">Retorno Anual</div>
+            <div class="text-sm font-bold text-brand-accent">+22.4%</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Modelagem &amp; Alocação de Capital</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Consultoria Financeira &amp; Risco</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Finanças</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Investimentos</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Botão Centralizado Abaixo do Grid no estilo da referência -->
+  <div class="flex justify-center">
+    <a class="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-brand-accent text-slate-950 font-bold text-sm shadow-glow-cyan hover:bg-sky-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" href="#contato">
+      Ver Todos os Projetos
+    </a>
+  </div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: StackSection -->
+<!-- Divisão das competências técnicas por domínio analítico -->
+
+<!-- END: StackSection -->
+<!-- BEGIN: ContactSection -->
+<!-- Chamada para Ação Final para Recrutadores, Gestores e Líderes Técnicos -->
+<section class="py-24 max-w-4xl mx-auto px-6 text-center" data-purpose="contact-cta" id="contato">
+
+</section>
+<!-- END: ContactSection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<!-- Rodapé limpo e informativo -->
+<footer class="border-t border-brand-border/40 py-8 bg-brand-dark/95 text-xs text-slate-400" data-purpose="page-footer">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="">© 2026 Jennifer Farias. Todos os direitos reservados.</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-slate-200 transition-colors" href="#hero">Voltar ao Topo ↑</a>
+<span class="">•</span>
+<span class="inline-flex items-center gap-1.5 text-slate-300">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Pipelines Operacionais 100%
+        </span>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+
+
+
+
+</body></html>
