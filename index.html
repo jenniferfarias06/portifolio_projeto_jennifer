@@ -66,7 +66,7 @@
 <nav class="hidden md:flex items-center space-x-8 text-sm font-medium" data-purpose="navigation-menu"><a class="text-white relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-accent" href="#hero">Início</a><a class="text-slate-400 hover:text-white transition-colors duration-200" href="#sobre-mim">Sobre</a>
 <a class="text-slate-400 hover:text-white transition-colors duration-200" href="#curriculo">Currículo</a>
 <a class="text-slate-400 hover:text-white transition-colors duration-200" href="#ferramentas">Ferramentas</a>
-<a class="text-slate-400 hover:text-white transition-colors duration-200" href="#projetos">Projetos</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-200" href="projetos.html">Projetos</a>
 <a class="text-slate-400 hover:text-white transition-colors duration-200" href="#stack">Stack Técnica</a>
 <a class="text-slate-400 hover:text-white transition-colors duration-200" href="#contato">Contato</a></nav>
 <!-- Botão de Ação Destacado (Let's Talk) -->
@@ -99,7 +99,7 @@
 
 <!-- Ações do Hero (Botão Primário Glow + Secundário Dark Outline) -->
 <div class="flex flex-col sm:flex-row items-center gap-4 mb-12" data-purpose="hero-actions">
-<a class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-accent text-slate-950 font-bold text-sm shadow-glow-cyan hover:bg-sky-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" href="#projetos">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-accent text-slate-950 font-bold text-sm shadow-glow-cyan hover:bg-sky-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" href="projetos.html">
             Ver Projetos
           </a>
 <a class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-slate-900/90 text-slate-200 border border-brand-border hover:border-slate-600 hover:text-white text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2" href="#contato">
@@ -463,7 +463,7 @@ Ferramentas &amp; Publicação
   <!-- Filtros Centrais em Pílula (Pill Filter Bar) -->
   <div class="flex flex-wrap items-center justify-center gap-2.5 mb-14" data-purpose="portfolio-filters">
     <button class="px-5 py-2 rounded-full text-xs md:text-sm font-semibold bg-brand-accent text-slate-950 shadow-glow-cyan transition-all duration-200">Todos</button>
-    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200"><projeto-fome-zero-01 class="html"></projeto-fome-zero-01>; BI</button>
+    <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Fome Zero</button>
     <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Finanças &amp; SaaS</button>
     <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Engenharia de Dados</button>
     <button class="px-5 py-2 rounded-full text-xs md:text-sm font-medium bg-slate-900/80 border border-brand-border text-slate-400 hover:text-white hover:border-brand-accent/50 transition-all duration-200">Machine Learning</button>
@@ -472,11 +472,11 @@ Ferramentas &amp; Publicação
   <!-- Grid 3x2 de Cards Conforme Imagem de Referência -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
     <!-- Card 1: Business Growth Strategy -->
-    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group">
+    <article class="bg-brand-card rounded-2xl border border-brand-border/80 overflow-hidden shadow-lg hover:border-brand-accent/60 hover:shadow-glow-subtle transition-all duration-300 flex flex-col group cursor-pointer" onclick="window.location.href='projeto-fome-zero-01.html'">
       <div class="h-48 bg-gradient-to-br from-slate-900 to-sky-950/40 p-6 flex flex-col justify-between border-b border-brand-border/60 relative overflow-hidden">
         <div class="flex justify-between items-center z-10">
-          <span class="text-[10px] font-mono-code bg-brand-accent/10 text-brand-accent px-2.5 py-0.5 rounded border border-brand-accent/30 font-semibold">ROI +34%</span>
-          <span class="text-xs text-emerald-400 font-semibold">Taxa de Retenção: 96%</span>
+          <span class="text-[10px] font-mono-code bg-brand-accent/10 text-brand-accent px-2.5 py-0.5 rounded border border-brand-accent/30 font-semibold">Dashboard Streamlit</span>
+          <span class="text-xs text-emerald-400 font-semibold">15 países • 69 cidades</span>
         </div>
         <div class="flex items-end justify-between h-20 pt-4 px-2 z-10">
           <div class="w-3 bg-slate-700 h-[35%] rounded-t"></div>
@@ -490,12 +490,12 @@ Ferramentas &amp; Publicação
       </div>
       <div class="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Estratégia de Crescimento &amp; Churn</h3>
-          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Planejamento Estratégico &amp; IA</p>
+          <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-brand-accent transition-colors mb-1">Fome Zero — Análise Global de Restaurantes</h3>
+          <p class="text-xs md:text-sm text-slate-400 font-medium mb-4">Ciência de Dados &amp; Business Analytics</p>
         </div>
         <div class="flex flex-wrap gap-2 text-xs text-slate-300">
-          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Estratégia</span>
-          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Scikit-Learn</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Python</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px]">Streamlit &amp; Plotly</span>
         </div>
       </div>
     </article>
@@ -692,3 +692,4 @@ Ferramentas &amp; Publicação
 
 
 </body></html>
+
